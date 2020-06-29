@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>제목</title>
+  <meta charset="utf-8" />
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type = "text/javascript">
+      (function($){
+          $.fn.strikethrough = function(){
+            //console.dir(this);
+            //console.log("is $ object? = " + this instanceof jQuery);
+            return this.each(function(){
+                console.dir(this);
+                console.log("is $ object? = " + this instanceof jQuery);
+                console.dir($(this));
+                this.css('text-decoration','line-through');
+            });
+          };
+      }(jQuery));
+
+
+    $(function(){
+        $('#btnClick').on('click',function(){
+            $('p.strikethrough').strikethrough();
+        });
+    })
+  </script>
+</head>
+<body>
+
+    <button id="btnClick">Search</button>
+    <p class="strikethrough">EAD TEST</p>
+    <p class="strikethrough">jQuery Plugin</p>
+</body>
+</html>
